@@ -7,19 +7,32 @@ document.addEventListener('DOMContentLoaded', () => {
     let yesScale = 1;
     let yesFontSize = 1.2;
 
+    let clickCount = 0;
+
     // Cuando se presiona "No"
     btnNo.addEventListener('click', (e) => {
         e.preventDefault();
-        // Aumentar el tamaño del botón Sí
-        yesScale += 0.3;
+        clickCount++;
+
+        // Aumentar el tamaño del botón Sí progresivamente más rápido
+        yesScale += 0.5 + (clickCount * 0.2);
         yesFontSize += 0.1;
 
         btnYes.style.transform = `scale(${yesScale})`;
 
-        // El botón No se mantiene en su sitio de acuerdo a tus requerimientos:
-        // "cada vez que haga click en el no, este no se mueva"
+        // Asegurar que el botón Sí cubra al No
+        btnYes.style.position = 'relative';
+        btnYes.style.zIndex = '100';
 
-        // Podemos añadir un pequeño feedback visual de que se hizo click en no
+        // Opcional: Hacer que el botón Sí sea más persuasivo
+        const textOptions = ["Sí", "diga que sí", "Por favooorrr, diga que si", "para ya no ser necio diga que si jeje", "No hay otra opción, diga que si", "Ya diga que SÍ!"];
+        if (clickCount < textOptions.length) {
+            btnYes.innerText = textOptions[clickCount];
+        } else {
+            btnYes.innerText = textOptions[textOptions.length - 1];
+        }
+
+        // El botón No se opaca ligeramente
         btnNo.style.opacity = parseFloat(window.getComputedStyle(btnNo).opacity) - 0.1;
         if (parseFloat(window.getComputedStyle(btnNo).opacity) < 0.3) {
             btnNo.style.opacity = 0.3; // no dejar que desaparezca del todo
