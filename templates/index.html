@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feliz Día de la Mujer</title>
+    <!-- Modern Typography: Outfit -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="background-animation">
+        <ul class="bubbles">
+            <li></li><li></li><li></li><li></li><li></li>
+            <li></li><li></li><li></li><li></li><li></li>
+        </ul>
+    </div>
+
+    <main class="container">
+        <div class="glass-card" id="main-content">
+            <div class="message-container">
+                <p class="fade-in delay-1">"Hoy, en el Día de la Mujer, no quiero decirle solo un mensaje bonito,<br>quiero decirle algo que me nace de verdad.</p>
+                <p class="fade-in delay-2">Porque no hay mujer tan especial como usted,<br>usted es una mujer que se siente diferente desde el primer momento.</p>
+                <p class="fade-in delay-3">No sé si el mundo siempre se lo dice,<br>pero tiene una forma de ser que deja huella:<br>su manera de hablar, su forma de ver la vida,<br>esa mezcla tan suya de fuerza, dulzura e inteligencia<br>que hace que quien la conozca se dé cuenta de lo valiosa que es.</p>
+                <p class="fade-in delay-4">A veces la vida pone personas en nuestro camino<br>que no llegan por casualidad.<br>Personas que, incluso sin darse cuenta,<br>terminan siendo importantes.</p>
+                <p class="fade-in delay-5">Y usted es una de esas personas para mí.</p>
+                <p class="fade-in delay-6">Tal vez nunca le he dicho todo lo que pienso de usted,<br>pero hoy quiero que sepa que la admiro mucho.<br>Admiro la mujer que es,<br>la forma en que enfrenta la vida,<br>lo fuerte que es,<br>y esa luz tan suya que hace que todo a su alrededor<br>se sienta un poco más bonito.</p>
+                <p class="fade-in delay-7 highlight-text">usted es una mujer que deja algo en el corazón de los demás.</p>
+                <p class="fade-in delay-8">Por eso hoy quiero desearle<br>un muy feliz Día de la Mujer,<br>y recordarle que es una mujer única, valiosa y realmente especial.</p>
+                <p class="fade-in delay-9">Y aunque el mundo esté lleno de personas,<br>créame que no hay nadie como usted."</p>
+            </div>
+
+            <hr class="separator fade-in delay-10">
+
+            <div class="interactive-section fade-in delay-11" id="interactive-area">
+                <h3 class="question">¿Le puedo ir a dejar un detalle?</h3>
+                <p class="subtext">No tenemos que decir ni una sola palabra si así lo desea.</p>
+                
+                <div class="buttons-container">
+                    <button class="btn btn-yes" id="btn-yes">Sí</button>
+                    <button class="btn btn-no" id="btn-no">No</button>
+                </div>
+            </div>
+
+            <div class="hidden-message" id="success-message">
+                <h2>Okeysss,</h2>
+                <p class="question-time">¿a qué hora está en casa para poder ir a dejarle?</p>
+                <p class="whatsapp-prompt">Dígame la hora por whatsapp por fa ✨</p>
+            </div>
+        </div>
+    </main>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
